@@ -18,6 +18,8 @@ dotnet add package DotNetEasyCache
 **Add to appsettings.json**
 In your appsettings.json you'll need to include the following entry to utilize DotNetEasyCache:
 
+You can use "Memory", "Redis", or "Sql" as the `CacheHandler` value.
+
 ```
 "EasyCache": {
     "CacheHandler": "Memory",
