@@ -59,6 +59,10 @@ This will implement all the DotNetEasyCache required services.
 If you are using async method you can add "Async" to the end of the method you are using. ex:
 
 ```
+_easyCache.Put("key", "value", seconds);
+```
+would become
+```
 await _easyCache.PutAsync("key", "value", seconds);
 ```
 
