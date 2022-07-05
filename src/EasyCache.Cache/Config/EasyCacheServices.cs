@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using EasyCache.Cache.Interface;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,16 +17,16 @@ namespace EasyCache.Cache.Config
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            services.AddScoped<EasyCache>();
+            services.AddScoped<IEasyCache, EasyCache>();
 
-            string cacheType = configuration.GetSection("CacheHandler").Value;
+            string cacheType = configuration.GetSection("EasyCache:CacheHandler").Value;
 
             if (cacheType == Constants.REDIS)
             {
                 services.AddStackExchangeRedisCache(options =>
                 {
-                    options.Configuration = configuration.GetSection("Redis:Host").Value;
-                    options.InstanceName = configuration.GetSection("Redis:Instance").Value;
+                    options.Configuration = configuration.GetSection("EasyCache:Redis:Host").Value;
+                    options.InstanceName = configuration.GetSection("EasyCache:Redis:Instance").Value;
                 });
             }
         }

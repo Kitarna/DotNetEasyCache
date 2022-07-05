@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Caching.Distributed;
+﻿using EasyCache.Cache.Interface;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace EasyCache.Cache
 {
-    public class EasyCache
+    public class EasyCache : IEasyCache
     {
         private readonly IDistributedCache _cache;
 
@@ -10,6 +11,7 @@ namespace EasyCache.Cache
         {
             _cache = cache;
         }
+
         /// <summary>
         /// Adds the value sent to the Redis cache for the amount of seconds given.
         /// </summary>
@@ -24,6 +26,7 @@ namespace EasyCache.Cache
 
             _cache.SetString(key, value, options);
         }
+
         /// <summary>
         /// Adds the value sent to the cache asynchronously for the amount of seconds given.
         /// </summary>
@@ -38,6 +41,7 @@ namespace EasyCache.Cache
 
             await _cache.SetStringAsync(key, value, options);
         }
+
         /// <summary>
         /// Adds the value sent to the Redis cache indefinitely. 
         /// </summary>
@@ -47,6 +51,7 @@ namespace EasyCache.Cache
         {
             _cache.SetString(key, value);
         }
+
         /// <summary>
         /// Adds the value sent to the cache asynchronously indefinitely. 
         /// </summary>
