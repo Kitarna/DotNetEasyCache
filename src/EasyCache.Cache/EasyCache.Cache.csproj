@@ -10,7 +10,9 @@
     <PackageProjectUrl>https://github.com/Kitarna/DotNetEasyCache</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Kitarna/DotNetEasyCache</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>cache;.net 6; library</PackageTags>
+    <PackageTags>cache; 6;library;sql cache; distributed cache; redis cache</PackageTags>
+    <Company>Kitarna</Company>
+    <Authors>DanRovito</Authors>
   </PropertyGroup>
 
   <ItemGroup>
