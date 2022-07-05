@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Alachisoft.NCache.Caching.Distributed;
 using EasyCache.Cache.Interface;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,14 +39,6 @@ namespace EasyCache.Cache.Config
                         options.ConnectionString = configuration.GetSection("EasyCache:Sql:CacheConnectionString").Value;
                         options.SchemaName = configuration.GetSection("EasyCache:Sql:SchemaName").Value;
                         options.TableName = configuration.GetSection("EasyCache:Sql:TableName").Value;
-                    });
-                    break;
-                case Constants.NCACHE:
-                    services.AddNCacheDistributedCache(options =>
-                    {
-                        options.CacheName = configuration.GetSection("EasyCache:NCache:CacheName").Value;
-                        options.EnableLogs = bool.Parse(configuration.GetSection("EasyCache:NCache:EnableLogs").Value);
-                        options.ExceptionsEnabled = bool.Parse(configuration.GetSection("EasyCache:NCache:ExceptionsEnabled").Value);
                     });
                     break;
                 default:

@@ -11,6 +11,5 @@ namespace EasyCache.Cache.Config
         public const string REDIS = "Redis";
         public const string MEMORY = "Memory";
         public const string SQL = "Sql";
-        public const string NCACHE = "NCache";
     }
 }
