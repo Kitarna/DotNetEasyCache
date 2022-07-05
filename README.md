@@ -32,7 +32,21 @@ In your appsettings.json you'll need to include the following entry to utilize D
     }
   }
 ```
+
+#### If you are using SQL Server Cache
+To create a SQL Server cached item table in a SQL Server instance, you can use the sql-cache tool. The tool creates a table with the name and schema that you specify.
+
+Create a table in SQL Server by running the sql-cache create command. Provide the SQL Server instance (Data Source), database (Initial Catalog), schema (for example, dbo), and table name (for example, TestCache):
+
+You'll also want to use that same connection string, schema, and table name in your `appsettings.json`
+
+```
+dotnet sql-cache create "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
+```
+
+
 **Program.cs Changes**
+
 Add the following line to your `program.cs` file:
 
 ```
