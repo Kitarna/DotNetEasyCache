@@ -13,7 +13,7 @@ namespace EasyCache.Cache
         }
 
         /// <summary>
-        /// Adds the value sent to the Redis cache for the amount of seconds given.
+        /// Adds the value sent to the cache for the amount of seconds given.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -43,7 +43,7 @@ namespace EasyCache.Cache
         }
 
         /// <summary>
-        /// Adds the value sent to the Redis cache indefinitely. 
+        /// Adds the value sent to the cache indefinitely. 
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
