@@ -84,6 +84,28 @@ namespace EasyCache.Cache
 
             return string.IsNullOrEmpty(existingItem) ? "" : existingItem.ToString();
         }
+
+        /// <summary>
+        /// Refreshes a value in the cache based on its key, resetting its sliding expiration timeout
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public void Refresh(string key)
+        {
+            _cache.Refresh(key);
+        }
+
+        /// <summary>
+        /// Refreshes a value in the cache based on its key, resetting its sliding expiration timeout
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public async void RefreshAsync(string key)
+        {
+            await _cache.RefreshAsync(key);
+        }
+
+
         /// <summary>
         /// Deletes the cached value based on the key supplied.
         /// </summary>
