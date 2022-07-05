@@ -55,6 +55,13 @@ builder.Services.SetEasyCacheServices();
 This will implement all the DotNetEasyCache required services.
 
 #### Usage
+
+If you are using async method you can add "Async" to the end of the method you are using. ex:
+
+```
+_easyCache.PutAsync("key", "value", seconds);
+```
+
 ##### Dependency Injection
 You can utilize dependency injection to bring the DotNetEasyCache into your project files. An example when using DotNetEasyCache in your a controller can be seen here:
 
