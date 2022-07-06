@@ -8,12 +8,12 @@ DotNetEasyCache is a simple way to handle caching items in your .Net project.  I
 You can install DotNetEasyCache through Nuget package manager by running the following:
 
 ```
-Install-Package DotNetEasyCache -Version 1.0.0
+Install-Package EasyCache.Cache -Version 1.0.1
 ```
 If you use the dotnet CLI you can use the following:
 
 ```
-dotnet add package DotNetEasyCache
+dotnet add package EasyCache.Cache --version 1.0.1
 ```
 **Add to appsettings.json**
 In your appsettings.json you'll need to include the following entry to utilize DotNetEasyCache:
