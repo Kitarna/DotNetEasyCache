@@ -1,7 +1,7 @@
 # DotNetEasyCache
 
 ### Introduction
-DotNetEasyCache is a simple way to handle caching items in your .Net project.  It utilizes `iDistributedCache` to help handle caching.
+DotNetEasyCache is a simple way to handle caching items in your .Net project.  It utilizes `iDistributedCache` to help handle caching. It can be used with in memory, Redis, or SQL caching.
 
 ### Documentation
 #### Installation/Setup
